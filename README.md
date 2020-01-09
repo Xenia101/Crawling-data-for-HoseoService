@@ -19,15 +19,15 @@ let data = JSON.parse($.html().replace('var xlivinghall= ', '').replace(';', '')
 console.log(data);
 ```
 
-```json
+```javascript
 {
-  year: '',
-  month: '',
-  week: '',
-  day1: '',
-  eat11:'data',
-  eat12:'data',
-  dat2: '',
+  'year' : '',
+  'month': '',
+  'week' : '',
+  'day1' : '',
+  'eat11':'data',
+  'eat12':'data',
+  'day2' : '',
   ...
 }
 ```
