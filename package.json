@@ -13,6 +13,7 @@
         "email": "lommy101@gmail.com"
     },
     "dependencies": {
-        "cheerio-httpcli": "^0.7.4"
+        "cheerio-httpcli": "^0.7.4",
+        "request": "^2.88.0"
     }
 }
