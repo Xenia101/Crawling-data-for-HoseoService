@@ -1,11 +1,11 @@
 {
-    "name": "chat-in-blog",
+    "name": "crawling meal",
     "version": "0.0.1",
-    "description": "XENIA chatting app",
+    "description": "XENIA crawling meal",
     "keywords": [
         "Xenia",
         "Xenia101",
-        "chatting"
+        "crawling"
     ],
     "homepage": "www.nichijou.kr",
     "bugs": {
