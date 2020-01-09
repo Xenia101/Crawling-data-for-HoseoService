@@ -11,7 +11,16 @@ client.fetch(url, {}, function(err, $, res){
         console.log(err);
         return;
     }
-    data = JSON.parse($.html().replace('var xlivinghall= ', '').replace(';', ''));
-    console.log(data);
+    else{
+        data = JSON.parse($.html().replace('var xlivinghall= ', '').replace(';', ''));
+        day = moment().day();
+        if(day == 1){return data['eat11'] + '\n' + data['eat12'];}
+        else if(day == 2){return data['eat21'] + '\n' + data['eat22'];}
+        else if(day == 3){return data['eat31'] + '\n' + data['eat32'];}
+        else if(day == 4){return data['eat41'] + '\n' + data['eat42'];}
+        else if(day == 5){return data['eat51'] + '\n' + data['eat52'];}
+        else if(day == 6){return 'X';}
+        else{return 'X';}
+    }
 });
 
