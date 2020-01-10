@@ -1,6 +1,6 @@
-# Crawling meal data for HoseoService
+# Crawling data for HoseoService
 
-Crawling meal data for [HoseoService](https://github.com/Xenia101/HoseoService-on-Kakao-ch) using node.js
+Crawling data(meal, library) for [HoseoService](https://github.com/Xenia101/HoseoService-on-Kakao-ch) using node.js
 
 ## 설치 방법
 
@@ -13,6 +13,8 @@ var client = require('cheerio-httpcli');
   - node.js on windows10 or linux
   
 ## 예시
+
+- Crawling meal data
 
 ```javascript
 let data = JSON.parse($.html().replace('var xlivinghall= ', '').replace(';', ''));
@@ -31,3 +33,5 @@ console.log(data);
   ...
 }
 ```
+
+- Crawling library data
