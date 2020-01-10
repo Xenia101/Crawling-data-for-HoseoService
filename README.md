@@ -10,7 +10,7 @@ var client = require('cheerio-httpcli');
 ``` 
 
 - 실행 환경 / 테스트 환경
-  - node.js on windows10
+  - node.js on windows10 or linux
   
 ## 예시
 
