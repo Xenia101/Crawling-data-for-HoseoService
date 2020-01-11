@@ -49,39 +49,119 @@ apiRouter.post('/eat', function(req, res) {
             ]
           }
 	}
-
 	res.status(200).send(responseBody);
     }
   });
 });
 
-apiRouter.post('/library', function(req, res) {
+apiRouter.post('/l_asan', function(req, res) {
   cheerio.fetch(url, {}, function(err, $){
     if(err){
         console.log(err);
         return;
     }
     else{
-        const responseBody = {
-          version: "2.0",
-          template: {
-            outputs: [
-              {
-                simpleText: {
-                  text: r_data
-                }
-              }
-            ]
-          }
-        }
-        res.status(200).send(responseBody);
+	let url = 'https://library.hoseo.ac.kr/smufu-api/pc/1/rooms-at-seat?branchGroupId=1&isActive=true';
+
+	cheerio.set('headers', {
+	    'user-agent' : 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.36', 
+	    'Accept-Charset': 'utf-8'
+	});
+
+	cheerio.fetch(url, {}, function(err, $){
+	    if(err){
+	        console.log(err);
+	        return;
+	    }
+	    else{
+	        data = JSON.parse($.html());
+	        data = data['data']['list'];
+
+		let r_data = '호서대 아산캠 열람실 이용현황\n\n';
+
+		for (let index = 0; index < data.length; index++) {
+       		     let name = data[index]['name'];
+       		     let total = data[index]['total'];
+       		     let occupied = data[index]['occupied'];
+       		     let available = data[index]['available'];
+          	     let percent = Math.round(occupied/total * 100);
+           	     r_data += '-' + name + '-\n전체 좌석수 : ' + total + '\n사용 좌석수 : ' + occupied  + '\n잔여 좌석수 : ' + available + '\n이용율 : ' + percent + '%\n\n';
+        	}
+		r_data = r_data.slice(0,-2);
+		const responseBody = {
+	            "version": "2.0",
+        	    "template": {
+        	        "outputs": [
+        	            {
+        	                "simpleText": {
+        	                    "text": r_data
+        	                }
+        	            }
+        	        ]
+        	    }
+		}
+		res.status(200).send(responseBody);
+	    }
+	});
     }
   });
 });
 
 
+apiRouter.post('/l_cheonan', function(req, res) {
+  cheerio.fetch(url, {}, function(err, $){
+    if(err){
+        console.log(err);
+        return;
+    }
+    else{
+        let url = 'https://library.hoseo.ac.kr/smufu-api/pc/2/rooms-at-seat?branchGroupId=1&isActive=true';
 
-app.listen(3000, function() {
-  console.log('Example skill server listening on port 3000!');
+        cheerio.set('headers', {
+            'user-agent' : 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.36',
+            'Accept-Charset': 'utf-8'
+        });
+
+        cheerio.fetch(url, {}, function(err, $){
+            if(err){
+                console.log(err);
+                return;
+            }
+            else{
+                data = JSON.parse($.html());
+                data = data['data']['list'];
+
+                let r_data = '호서대 천안캠 열람실 이용현황\n\n';
+
+                for (let index = 0; index < data.length; index++) {
+                     let name = data[index]['name'];
+                     let total = data[index]['total'];
+                     let occupied = data[index]['occupied'];
+                     let available = data[index]['available'];
+                     let percent = Math.round(occupied/total * 100);
+                     r_data += '-' + name + '-\n전체 좌석수 : ' + total + '\n사용 좌석수 : ' + occupied  + '\n잔여 좌석수 : ' + available + '\n이용율 : ' + percent + '%\n\n';
+                }
+		r_data = r_data.slice(0,-2);
+                const responseBody = {
+                    "version": "2.0",
+                    "template": {
+                        "outputs": [
+                            {
+                                "simpleText": {
+                                    "text": r_data
+                                }
+                            }
+                        ]
+                    }
+                }
+                res.status(200).send(responseBody);
+            }
+        });
+    }
+  });
 });
 
+
+app.listen(3001, function() {
+  console.log('Example skill server listening on port 3000!');
+});
