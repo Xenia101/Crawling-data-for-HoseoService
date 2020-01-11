@@ -55,6 +55,32 @@ apiRouter.post('/eat', function(req, res) {
   });
 });
 
+apiRouter.post('/library', function(req, res) {
+  cheerio.fetch(url, {}, function(err, $){
+    if(err){
+        console.log(err);
+        return;
+    }
+    else{
+        const responseBody = {
+          version: "2.0",
+          template: {
+            outputs: [
+              {
+                simpleText: {
+                  text: r_data
+                }
+              }
+            ]
+          }
+        }
+        res.status(200).send(responseBody);
+    }
+  });
+});
+
+
+
 app.listen(3000, function() {
   console.log('Example skill server listening on port 3000!');
 });
