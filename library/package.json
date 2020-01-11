@@ -1,0 +1,19 @@
+{
+  "name": "library",
+  "version": "0.0.1",
+  "description": "",
+  "main": "library.js",
+  "dependencies": {
+    "cheerio-httpcli": "^0.7.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "library",
+    "crawling"
+  ],
+  "author": "XENIA",
+  "license": "ISC"
+}
