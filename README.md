@@ -35,3 +35,23 @@ console.log(data);
 ```
 
 - Crawling library data
+
+```javascript
+let data = JSON.parse($.html());
+data = data['data']['list'];
+
+let name = data[index]['name'];
+let total = data[index]['total'];
+let occupied = data[index]['occupied'];
+let available = data[index]['available'];
+let percent = Math.round(occupied/total * 100);
+```
+
+```javascript
+{
+  'name' : '',
+  'total' : '',
+  'occupied' : '',
+  'available' : '',
+}
+```
