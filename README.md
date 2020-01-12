@@ -7,6 +7,7 @@ Crawling data(meal, library) for [HoseoService](https://github.com/Xenia101/Hose
 - modules
 ```javascript 
 var client = require('cheerio-httpcli');
+var moment = require('moment');
 ``` 
 
 - 실행 환경 / 테스트 환경
