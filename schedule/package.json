@@ -1,0 +1,18 @@
+{
+  "name": "scheduel",
+  "version": "0.0.1",
+  "description": "",
+  "main": "schedule.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "schedule"
+  ],
+  "author": "XENIA",
+  "license": "ISC",
+  "dependencies": {
+    "cheerio-httpcli": "^0.7.4",
+    "moment": "^2.24.0"
+  }
+}
