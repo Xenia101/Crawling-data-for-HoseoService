@@ -53,7 +53,7 @@ let percent = Math.round(occupied/total * 100);
   'name' : '',
   'total' : '',
   'occupied' : '',
-  'available' : '',
+  'available' : ''
 }
 ```
 
