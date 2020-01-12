@@ -19,6 +19,39 @@ app.use(logger('dev', {}));
 app.use(bodyParser.json());
 app.use('/api', apiRouter);
 
+apiRouter.post('/schedule', function(req, res) {
+  let url = 'http://www.hoseo.ac.kr/Home//SCDList.mbz?action=MAPP_1708250140&schIdx=0&schYear=2020&schMonth=01&schClassify=%ED%95%99%EB%B6%80&schKeyword=';
+  cheerio.fetch(url, {}, function(err, $){
+    if(err){
+        console.log(err);
+        return;
+    }
+    else{
+        var m = moment();
+        let r_data = m.month()+1 + '월 학사일정\n\n';
+        for (let index = 0; index < $('.firstDate').length; index++) {
+            r_data += $('.firstDate')[index]['children'][0]['data'].trim() + "\n" + $('td h4')[index]['children'][0]['data'].trim() + "\n\n";
+        }
+        r_data = r_data.slice(0,-2);
+
+        const responseBody = {
+          version: "2.0",
+          template: {
+            outputs: [
+              {
+                simpleText: {
+                  text: r_data
+                }
+              }
+            ]
+          }
+        }
+        res.status(200).send(responseBody);
+    }
+  });
+});
+
+
 apiRouter.post('/eat', function(req, res) {
   cheerio.fetch(url, {}, function(err, $){
     if(err){
