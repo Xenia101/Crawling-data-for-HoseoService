@@ -55,3 +55,12 @@ let percent = Math.round(occupied/total * 100);
   'available' : '',
 }
 ```
+
+- Crawling university schedule
+
+```javascript
+let msg = m.month()+1;
+for (let index = 0; index < $('.firstDate').length; index++) {
+            msg += $('.firstDate')[index]['children'][0]['data'].trim() + " : " + $('td h4')[index]['children'][0]['data'].trim() + "\n";
+}
+```
