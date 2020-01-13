@@ -74,4 +74,6 @@ data = soup.select('table:nth-of-type(2) > tbody tr')
 edit_data = list()
 edit_data.append(x.text.strip().split('\n')[1:] for x in data)
 df = pd.DataFrame(edit_data)
+
+# output - bus_out.csv
 ```
