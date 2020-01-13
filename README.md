@@ -65,3 +65,13 @@ for (let index = 0; index < $('.firstDate').length; index++) {
             msg += $('.firstDate')[index]['children'][0]['data'].trim() + " : " + $('td h4')[index]['children'][0]['data'].trim() + "\n";
 }
 ```
+
+- Crawling bus data to csv
+
+```python
+data = soup.select('table:nth-of-type(2) > tbody tr')
+
+edit_data = list()
+edit_data.append(x.text.strip().split('\n')[1:] for x in data)
+df = pd.DataFrame(edit_data)
+```
