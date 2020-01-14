@@ -1,0 +1,24 @@
+{
+  "name": "bustime",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bus.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "XENIA"
+  ],
+  "author": "XENIA",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^3.1.0",
+    "cheerio-httpcli": "^0.7.4",
+    "csv-parse": "^4.8.3",
+    "csv-parser": "^2.3.2",
+    "dateformat": "^3.0.3",
+    "fast-csv": "^4.0.2",
+    "moment": "^2.24.0",
+    "promised-csv": "^1.0.1"
+  }
+}
