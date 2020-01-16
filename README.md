@@ -48,7 +48,7 @@ let available = data[index]['available'];
 let percent = Math.round(occupied/total * 100);
 ```
 
-```javascript
+```javascript 
 {
   'name' : '',
   'total' : '',
@@ -76,4 +76,14 @@ edit_data.append(x.text.strip().split('\n')[1:] for x in data)
 df = pd.DataFrame(edit_data)
 
 # output - bus_out.csv
+```
+
+- An hourly bus schedule by ```bus_out.csv```
+
+```javascript
+const timesafter = dates.map(function(s){
+    return moment(s, "HH:mm");
+}).sort(function(m){
+    return m.valueOf();
+}).find(function(t){return t.isAfter();});
 ```
