@@ -2,18 +2,17 @@
 
 Crawling data(meal, library, schedule) for [KakaoCH HoseoService](https://github.com/Xenia101/HoseoService-on-Kakao-ch) using node.js
 
-## 설치 방법
+## Execution / Test Environment
 
 - modules
 ```javascript 
 var client = require('cheerio-httpcli');
 var moment = require('moment');
 ``` 
-
-- 실행 환경 / 테스트 환경
-  - node.js on windows10 or linux
+ 
+- node.js on windows10 or linux
   
-## 
+## EXAMPLE
 
 - Crawling meal data
 
