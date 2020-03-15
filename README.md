@@ -12,7 +12,7 @@ var moment = require('moment');
  
 - node.js on windows10 or linux
   
-## EXAMPLE
+## Example
 
 - Crawling meal data
 
