@@ -1,6 +1,6 @@
 # Crawling data for HoseoService
 
-Crawling data(meal, library, schedule) for [KakaoCH HoseoService](https://github.com/Xenia101/HoseoService-on-Kakao-ch) using node.js
+Crawling data(*meal, library, schedule etc..*) for [KakaoCH HoseoService](https://github.com/Xenia101/HoseoService-on-Kakao-ch) using node.js
 
 ## Execution / Test Environment
 
